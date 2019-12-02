@@ -1,0 +1,22 @@
+{
+  "name": "ibm-watson-language-translator",
+  "version": "1.0.0",
+  "description": "Conexão à API de tradução de linguagem da IBM Cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuswolkmer/ibm-watson-language-translator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateuswolkmer/ibm-watson-language-translator/issues"
+  },
+  "homepage": "https://github.com/mateuswolkmer/ibm-watson-language-translator#readme",
+  "dependencies": {
+    "ibm-watson": "^5.2.0"
+  }
+}
