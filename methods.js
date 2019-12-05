@@ -19,7 +19,7 @@ const translate = async (text, from, to) => {
         filename: text,
     };
 
-    console.log(`Traduzindo documento "${text}" de ${from} para ${to}...`);
+    console.log(`Traduzindo documento "${text}" de ${from} para ${to}...\n`);
     languageTranslator.translateDocument(translateDocumentParams)
         .then(async result => {
             console.log('\n-- TRADUÇÃO DE ARQUIVO')
@@ -48,7 +48,7 @@ const translate = async (text, from, to) => {
             const getTranslatedDocumentParams = {
                 documentId: documentId,
             };
-            console.log('Buscando documento traduzido e passando para o arquivo "translated.txt"...');
+            console.log('Buscando documento traduzido e passando para o arquivo "translated.txt"...\n');
             languageTranslator.getTranslatedDocument(getTranslatedDocumentParams)
                 .then(result => {
                     let outputFileName = 'translated.txt';
@@ -72,7 +72,7 @@ const translate = async (text, from, to) => {
       modelId: `${from}-${to}`,
     };
 
-    console.log(`Traduzindo "${text}", de ${from} para ${to}...`);
+    console.log(`Traduzindo "${text}", de ${from} para ${to}...\n`);
     await languageTranslator.translate(translateParams)
         .then(translationResult => {
             console.log('\n-- TRADUÇÃO DE TEXTO')
@@ -88,7 +88,7 @@ const translate = async (text, from, to) => {
 
 // Lista de linguagens disponíveis
 const languages = async() => {
-  console.log('Listando as linguagens disponíveis...');
+  console.log('Listando as linguagens disponíveis...\n');
   await languageTranslator.listIdentifiableLanguages()
     .then(identifiedLanguages => {
         console.log('\n-- LINGUAGENS DISPONÍVEIS')
@@ -109,7 +109,7 @@ const identify = async(text) => {
     const identifyParams = {
         text: text
     };
-    console.log(`Identificando a linguagem do texto "${text}"...`);
+    console.log(`Identificando a linguagem do texto "${text}"...\n`);
     languageTranslator.identify(identifyParams)
         .then(identifiedLanguages => {
             console.log('\n-- IDENTIFICAÇÃO DE LINGUAGEM')
@@ -123,8 +123,9 @@ const identify = async(text) => {
         });
 }
 
+// Lista os modelos de tradução disponíveis
 const models = async() => {
-    console.log('Listando os modelos de tradução disponíveis...');
+    console.log('Listando os modelos de tradução disponíveis...\n');
     languageTranslator.listModels()
         .then(translationModels => {
             console.log('\n-- MODELOS DE TRADUÇÃO DISPONÍVEIS')
